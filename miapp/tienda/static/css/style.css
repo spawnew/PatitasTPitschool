@@ -11,6 +11,28 @@ body {
     background-color: #dbe2eb;
     padding: 10px 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+color: #a7a2a2;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+    font-style: none;
 
-
+    justify-content: space-between;
+    background-color: rgb(15, 9, 9);
+    
+}
+.nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    list-style: none;
+}
+.titulo {
+    color: #858181;
+    text-decoration: none;
+   
+    display: block;
+    transition: color 0.3s ease;
 }

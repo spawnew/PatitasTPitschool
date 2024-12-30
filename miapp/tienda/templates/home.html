@@ -8,21 +8,26 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
 </head>
 <nav class="navbar">
-    <a href="{%url 'home'%}" >Home</a>
-    <a href="{%url 'contacto'%}" >Contacto</a>
-    <a href="{%url 'home'%}" >Home</a>
-    <a href="{%url 'home'%}" >Home</a>
-
     
-   
-   
+    <ul class="nav">
        
-     </nav>
+    {%block titulo%}
+   <li class="titulo"> hola home</li>
+{%endblock titulo%}
+  <li>  <a href="{%url 'home'%}" >Home</a></li>
+   <li> <a href="{%url 'contacto'%}" >Contacto</a></li>
+   <li> <a href="{%url 'home'%}" >Home</a></li>
+   <li> <a href="{%url 'home'%}" >Home</a></li>
+    </ul>
+ </nav>
 
 <body>
+
     {%block contenido%}
     <h1>hola home</h1>
 {%endblock contenido%}
-    
+    <footer>
+        <p>Redes Sociales  </p>
+    </footer>
 </body>
 </html>
