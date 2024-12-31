@@ -6,28 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-<nav class="navbar">
-    
-    <ul class="nav">
-       
-    {%block titulo%}
-   <li class="titulo"> hola home</li>
-{%endblock titulo%}
-  <li>  <a href="{%url 'home'%}" >Home</a></li>
-   <li> <a href="{%url 'contacto'%}" >Contacto</a></li>
-   <li> <a href="{%url 'home'%}" >Home</a></li>
-   <li> <a href="{%url 'home'%}" >Home</a></li>
-    </ul>
- </nav>
+
 
 <body>
+    <nav class="navbar">
+        <ul class="nav">
+            {% block titulo %}
+                <li class="titulo">Hola Home</li>
+            {% endblock titulo %}
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+        </ul>
+    </nav>
 
-    {%block contenido%}
-    <h1>hola home</h1>
-{%endblock contenido%}
-    <footer>
-        <p>Redes Sociales  </p>
+    <main>
+        {% block contenido %}
+        En esta página ayudamos a encontrar tu mascota
+        {% endblock contenido %}
+    </main>
+
+    <footer class="navbar">
+        <ul class="nav">
+            <li>
+                <a class="btn btn-dark btn-social mx-2" href="https://www.infobae.com/tag/twitter/" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/matyuyugioh.yugioh" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+            <li>
+                <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/lucas-sorzio-4a1bb1238/" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+        </ul>
     </footer>
 </body>
 </html>

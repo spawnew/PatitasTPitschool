@@ -2,37 +2,81 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-
     line-height: 1.6;
+    background-image: url('./fotos/dog-seamless-pattern-paws-bones-260nw-2350264459.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(15, 14, 19);
 
+    /* Asegurar que el cuerpo ocupe toda la pantalla y distribuya bien los elementos */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 .navbar {
     height: 50px;
     background-color: #dbe2eb;
-    padding: 10px 10px;
+    padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-color: #a7a2a2;
+    color: #a7a2a2;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 5px 10px;
-    transition: color 0.3s ease;
-    font-style: none;
-
     justify-content: space-between;
-    background-color: rgb(15, 9, 9);
-    
+    background-color: rgb(139, 111, 111);
 }
-.nav{
+
+.nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
 .titulo {
     color: #858181;
     text-decoration: none;
-   
     display: block;
     transition: color 0.3s ease;
+}
+
+/* Contenido principal */
+main {
+    flex: 1;
+    /* Esto asegura que el contenido principal ocupe el espacio restante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Footer */
+footer.navbar {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+footer.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer.navbar li a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer.navbar li a:hover {
+    color: #858181;
 }
