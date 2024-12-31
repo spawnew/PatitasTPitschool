@@ -15,19 +15,16 @@ body {
 .navbar {
 display: flex;
     justify-content: space-around;
-  
-    align-items: center;
-  
     background-color: #FFA500;
-    
-    padding: 10px 20px;
+   
+ 
 }
 
 .nav {
 list-style-type: none;
     display: flex;
     gap: 20px;
-justify-content: space-around;
+
     margin: 0;
     padding: 0;
     
