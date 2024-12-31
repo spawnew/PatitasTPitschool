@@ -7,5 +7,19 @@
 
 
 {%block contenido%}
-    <h1>hola contacto</h1>
-{%endblock contenido%}
+    
+<table>
+    <tbody>
+{% for s in perro %}
+    <tr>
+        
+        <td ><h1>{{ s.nombre }}</h1></td>
+        <td ><h1>{{ s.precio }}</h1></td>
+
+
+
+
+ {% endfor %}
+    </tbody>
+</table>
+        {%endblock contenido%}

@@ -8,7 +8,8 @@ def contacto(request):
     
     return render(request, 'contacto.html')
 def buscarPerro(request):
-    return render(request, 'buscarPerro.html')
+    contexto={"Perro":Perro.objects.all()}
+    return render(request, 'buscarPerro.html',contexto)
 
 
 def perroEncontrado(request):
@@ -21,8 +22,8 @@ def buscarPerroForm(request):
             
             perroNombre = miForm.cleaned_data['nombre']
             edadNombre = miForm.cleaned_data["edad"]
-            buscarPerro = BuscarPerro(nombre=perroNombre, edad=edadNombre)
-            buscarPerro.save()
+            perro = Perro(nombre=perroNombre, edad=edadNombre)
+            perro.save()
            
             mensaje = "¡Perro registrado con éxito!"
             return render(request, "buscarPerro.html", {"mensaje": mensaje})
