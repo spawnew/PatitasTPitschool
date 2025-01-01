@@ -22,7 +22,8 @@ def buscarPerroForm(request):
             
             perroNombre = miForm.cleaned_data['nombre']
             edadNombre = miForm.cleaned_data["edad"]
-            perro = Perro(nombre=perroNombre, edad=edadNombre)
+            fotoNombre = miForm.cleaned_data["foto"]
+            perro = Perro(nombre=perroNombre, edad=edadNombre, foto=fotoNombre)
             perro.save()
            
             mensaje = "¡Perro registrado con éxito!"
