@@ -10,6 +10,10 @@ urlpatterns = [
     path('perroEncontrado', views.perroEncontrado, name="perroEncontrado"),
     path('buscarPerroForm', views.buscarPerroForm, name="buscarPerroForm"),
     path('create_perro', views.PerroCreate.as_view(), name="create_perro"),
+    
+    path('update_perro/<int:pk>/', views.PerroUpdate.as_view(), name="update_perro" ),
+    path('delete_perro/<int:pk>/', views.PerroDelete.as_view(), name="delete_perro" ), 
+   
    
 ]
 
