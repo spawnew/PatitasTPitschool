@@ -15,5 +15,13 @@ urlpatterns = [
     path('delete_perro/<int:pk>/', views.PerroDelete.as_view(), name="delete_perro" ), 
    
    
+   
+    path('login/', views.login_request, name="login"),
+   
+   
+   
+   
+   
+   
 ]
 

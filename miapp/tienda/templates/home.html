@@ -13,13 +13,21 @@
 <body>
     <nav class="navbar">
         <ul class="nav">
+           {% if user.is_authenticated %}
             {% block titulo %}
-                <li class="titulo">Hola Home</li>
+                <li class="titulo">Home</li>
             {% endblock titulo %}
+                        
+            
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'perro_list' %}">Buscar perro</a></li>
             <li><a href="{% url 'perroEncontrado' %}">Perro encontrados</a></li>
             <li><a href="{% url 'contacto' %}">Contacto</a></li>
+        
+        {% else %}
+         <li class="nav-item"><a class="btn btn-primary my-2" href="{% url 'login' %}">Login</a></li>
+                         
+                        {% endif %}
         </ul>
     </nav>
     {%block otrotitulo%}
