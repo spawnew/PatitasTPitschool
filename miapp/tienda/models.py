@@ -10,3 +10,4 @@ class Perro(models.Model):
     edad = models.IntegerField()
     direccion = models.CharField(max_length=40)
     contacto=models.EmailField(("@gmail"), max_length=254)
+    

@@ -17,6 +17,7 @@ urlpatterns = [
    
    
     path('login/', views.login_request, name="login"),
+     path('registro/', views.register, name="registro"),
    
    
    

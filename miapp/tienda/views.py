@@ -85,3 +85,15 @@ def login_request(request):
     miForm = AuthenticationForm()
 
     return render(request, "login.html", {"form": miForm })
+def register(request):
+    if request.method == "POST":
+        miForm = RegistroForm(request.POST)
+        if miForm.is_valid():
+            usuario = miForm.cleaned_data.get("username")
+            miForm.save()
+            return redirect(reverse_lazy('home'))
+
+    else:    
+        miForm = RegistroForm()
+
+    return render(request, "registro.html", {"form": miForm })  
