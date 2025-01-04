@@ -54,6 +54,7 @@ class PerroCreate(CreateView):
 class  PerroUpdate(UpdateView):
     model = Perro
     fields = ['nombre', 'edad', ]
+    template_name = 'update_perro.html'
     success_url = reverse_lazy('perro_list')
 
 class  PerroDelete( DeleteView):
