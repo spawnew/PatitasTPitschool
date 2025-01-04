@@ -1,13 +1,13 @@
 {% extends './home.html' %}
 
 {% block titulo %}
-    <li class="titulo">Formulario para actualizar perritos</li>
+    <li class="titulo"> <h3> Actualizar datos de perritosh<h3></li>
 {% endblock titulo %}
 
 {% block contenido %}
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Enviar</button>
+        <button type="submit">Actualizar</button>
     </form>
 {% endblock contenido %}

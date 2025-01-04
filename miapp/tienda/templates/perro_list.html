@@ -4,14 +4,19 @@
  {%block titulo%}
 <li class="titulo"> buscar perros</li>
 {%endblock titulo%}
-
+{%block otrotitulo%}
+<p >En esta seccion podra agregar sus datos y los de su mascota para que las personas puedan ayudarlo a encontrar a su mascota</p>
+{%endblock otrotitulo%}
 
 {%block contenido%}
+    
     
 <table>
     <thead><tr>
         <th>nombre</th>
         <th>edad</th>
+         <th>direccion</th>
+         <th>direccion</th>
     <tbody>
            <td>
             <a
@@ -23,8 +28,10 @@
 {% for p in perro_list %}
     <tr>
         
-        <td ><h1>{{ p.nombre }}</h1></td>
-        <td ><h1>{{ p.edad }}</h1></td>
+        <td ><p>{{ p.nombre }}</p></td>
+        <td ><p>{{ p.edad }}</p></td>
+        <td ><p>{{ p.direccion }}</p></td>
+        <td ><p>{{ p.contacto }}</p></td>
       
  <td>
             <a

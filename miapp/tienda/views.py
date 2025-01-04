@@ -47,13 +47,13 @@ class PerroList( ListView):
 
 class PerroCreate(CreateView):
     model = Perro
-    fields = ['nombre', 'edad']  
+    fields = ['nombre', 'edad','direccion','contacto']  
     template_name = 'perro_form.html'
     success_url = reverse_lazy('perro_list')
     
 class  PerroUpdate(UpdateView):
     model = Perro
-    fields = ['nombre', 'edad', ]
+    fields = ['nombre', 'edad', 'direccion','contacto']
     template_name = 'update_perro.html'
     success_url = reverse_lazy('perro_list')
 
