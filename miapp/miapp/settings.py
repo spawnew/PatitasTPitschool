@@ -55,8 +55,8 @@ ROOT_URLCONF = 'miapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
-        'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates'],  # La carpeta principal de plantillas
+        'APP_DIRS': True,  # Permite buscar en las carpetas templates de las apps
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
