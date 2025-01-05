@@ -18,18 +18,20 @@ from django.contrib import messages
 
 def home(request):
     return render(request, 'home.html')
-
+@login_required
 def contacto(request):
     
+   
     return render(request, 'contacto.html')
+@login_required
 def buscarPerro(request):
     contexto={"Perro":Perro.objects.all()}
     return render(request, 'buscarPerro.html',contexto)
 
-
+@login_required
 def perroEncontrado(request):
     return render(request, 'perroEncontrado.html')
-
+@login_required
 def buscarPerroForm(request):
     if request.method == "POST":
         miForm = BuscarPerroForm(request.POST, request.FILES)  # Instancia del formulario con datos
@@ -48,24 +50,24 @@ def buscarPerroForm(request):
 
     return render(request, "buscarPerroForm.html", {"form": miForm})
 
-class PerroList( ListView):
+class PerroList(LoginRequiredMixin,  ListView):
     model = Perro
     template_name = "perro_list.html"
 
 
-class PerroCreate(CreateView):
+class PerroCreate(LoginRequiredMixin, CreateView):
     model = Perro
     fields = ['nombre', 'edad','direccion','contacto']  
     template_name = 'perro_form.html'
     success_url = reverse_lazy('perro_list')
     
-class  PerroUpdate(UpdateView):
+class  PerroUpdate(LoginRequiredMixin, UpdateView):
     model = Perro
     fields = ['nombre', 'edad', 'direccion','contacto']
     template_name = 'update_perro.html'
     success_url = reverse_lazy('perro_list')
 
-class  PerroDelete( DeleteView):
+class  PerroDelete(LoginRequiredMixin,  DeleteView):
     model = Perro
     template_name = 'perro_confirm_delete.html'
     success_url = reverse_lazy('perro_list')
@@ -105,3 +107,29 @@ def salir( request):
     logout(request)
     messages.success(request ,"tu sesision se ha cerrado correctamente")
     return redirect ("home")
+
+@login_required
+def agregar_avatar(request):
+    if request.method == "POST":
+        form = AvatarForm(request.POST, request.FILES)
+        if form.is_valid():
+            usuario = User.objects.get(username=request.user)
+
+            
+            avatarViejo = Avatar.objects.filter(user=usuario)
+            if len(avatarViejo) > 0:
+                for i in range(len(avatarViejo)):
+                    avatarViejo[i].delete()
+            
+            avatar = Avatar(user=usuario, imagen=form.cleaned_data['imagen'])
+            avatar.save()
+
+            imagen = Avatar.objects.get(user=request.user.id).imagen.url
+            request.session["avatar"] = imagen
+            return render(request, "miapp/home.html")
+
+    else:    
+        form = AvatarForm()
+
+    return render(request, "miapp/agregar_avatar.html", {"form": form })
+

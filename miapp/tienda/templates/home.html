@@ -23,6 +23,8 @@
             <li><a href="{% url 'perro_list' %}">Buscar perro</a></li>
             <li><a href="{% url 'perroEncontrado' %}">Perro encontrados</a></li>
             <li><a href="{% url 'contacto' %}">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'agregar_avatar' %}"><img src="{{ request.session.avatar }}" alt="Avatar" width="35" height="35"></a></li>
+
       <li class="nav-item"><a class="nav-link" href="{% url 'salir' %}">Logout</a></li>
         {% else %}
          <li class="nav-item"><a class="btn btn-primary my-2" href="{% url 'login' %}">Login</a></li>

@@ -15,7 +15,7 @@ urlpatterns = [
     path('update_perro/<int:pk>/', views.PerroUpdate.as_view(), name="update_perro" ),
     path('delete_perro/<int:pk>/', views.PerroDelete.as_view(), name="delete_perro" ), 
    
-   
+    path('agregar_avatar/', agregar_avatar, name="agregar_avatar"),
    
    
    path ('salir/' , views.salir , name="salir"),
