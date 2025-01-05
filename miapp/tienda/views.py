@@ -1,3 +1,4 @@
+from pyexpat.errors import messages
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from .forms import *
@@ -10,6 +11,9 @@ from django.contrib.auth.forms      import AuthenticationForm
 from django.contrib.auth            import authenticate, login,logout
 from django.contrib.auth.mixins     import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+
+from django.contrib import messages
+
 
 
 def home(request):
@@ -97,3 +101,7 @@ def register(request):
         miForm = RegistroForm()
 
     return render(request, "registro.html", {"form": miForm })  
+def salir( request):
+    logout(request)
+    messages.success(request ,"tu sesision se ha cerrado correctamente")
+    return redirect ("home")

@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.urls import path
 from . import views 
 
+
 urlpatterns = [
     path('home', views.home, name="home"),
     path('contacto', views.contacto, name="contacto"),
@@ -16,6 +17,8 @@ urlpatterns = [
    
    
    
+   
+   path ('salir/' , views.salir , name="salir"),
     path('login/', views.login_request, name="login"),
      path('registro/', views.register, name="registro"),
    
