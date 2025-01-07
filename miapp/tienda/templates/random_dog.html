@@ -1,0 +1,15 @@
+{%extends './home.html'%}
+    
+
+ {%block titulo%}
+<li class="titulo"> Perro encontrados</li>
+{%endblock titulo%}
+
+
+{%block contenido%}
+ <h1>Perros encontrados </h1>
+    <img src="{{ dog_image }}" alt="Imagen de un perro" class="fotosDePerros" width="400">
+    <br>
+    <a href="{% url 'random_dog' %}">Siguiente</a>
+    <h3>  <a href="https://mail.google.com/"> <b>patitas@gmail.com </b></h3>
+{%endblock contenido%}

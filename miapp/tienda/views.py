@@ -14,7 +14,8 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib import messages
 
-
+from django.shortcuts import render
+from .utils import get_random_dog
 
 def home(request):
     return render(request, 'home.html')
@@ -152,3 +153,14 @@ def editarPerfil(request):
         form = UserEditForm(instance=usuario)
 
     return render(request, "miapp/editar_Perfil.html", {"form": form }) 
+
+
+def random_dog_view(request):
+  
+    dog_image = get_random_dog()
+    if not dog_image:
+        return render(request, 'error.html', {'error': 'No se pudo obtener la imagen del perro.'})
+
+    return render(request, 'random_dog.html', {'dog_image': dog_image})
+
+

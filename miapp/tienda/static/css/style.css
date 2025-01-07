@@ -3,14 +3,12 @@ body {
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    background-image: url('{% static "css/fotos/dog-seamless-pattern-paws-bones-260nw-2350264459.webp" %}');
-    background-repeat: no-repeat;
-    background-size: cover;
+    
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    color: #333;
+    color: #0c0a0a;
 }
 
 /* Navbar */
@@ -56,8 +54,9 @@ body {
 
 .titulo {
     font-size: 1.5rem;
-    color: #FFF;
+    color: #070606;
     font-weight: bold;
+    background-color: #070606;
 }
 
 /* Avatar */
@@ -83,11 +82,11 @@ main {
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: #FF4500;
+    color: #0e0b0b;
  
     margin-bottom: 20px;
     letter-spacing: 2px;
-    text-shadow: 2px 2px #FFF;
+    text-shadow: 2px 2px #f10808;
 }
 
 /* Paragraph text */

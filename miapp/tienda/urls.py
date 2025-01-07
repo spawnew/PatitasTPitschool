@@ -21,6 +21,14 @@ urlpatterns = [
    path ('salir/' , views.salir , name="salir"),
     path('login/', views.login_request, name="login"),
      path('registro/', views.register, name="registro"),
+
+
+
+    path('random-dog/', views.random_dog_view, name='random_dog'),
+  
+  
+  
+
    
    
    
