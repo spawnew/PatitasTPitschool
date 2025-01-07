@@ -15,8 +15,8 @@ urlpatterns = [
     path('update_perro/<int:pk>/', views.PerroUpdate.as_view(), name="update_perro" ),
     path('delete_perro/<int:pk>/', views.PerroDelete.as_view(), name="delete_perro" ), 
    
-    path('agregar_avatar/', agregar_avatar, name="agregar_avatar"),
-   
+    path('agregar_avatar/', views.agregar_avatar, name="agregar_avatar"),
+   path('editar_perfil/', views.editarPerfil, name="editar_perfil"),
    
    path ('salir/' , views.salir , name="salir"),
     path('login/', views.login_request, name="login"),

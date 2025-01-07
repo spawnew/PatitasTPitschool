@@ -11,7 +11,7 @@
 {%block contenido%}
     
     
-<table>
+<table >
     <thead><tr>
         <th>nombre</th>
         <th>edad</th>
@@ -32,6 +32,7 @@
         <td ><p>{{ p.edad }}</p></td>
         <td ><p>{{ p.direccion }}</p></td>
         <td ><p>{{ p.contacto }}</p></td>
+        <td><img src="{{ p.imagen.url }}" class="fotosDePerros" alt="{{ perro.nombre }}" width="100" height="100"></td>
       
  <td>
             <a

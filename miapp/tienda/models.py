@@ -10,8 +10,13 @@ class Perro(models.Model):
     edad = models.IntegerField()
     direccion = models.CharField(max_length=40)
     contacto=models.EmailField(("@gmail"), max_length=254)
-    
-    class Avatar(models.Model):
+    imagen=models.ImageField(upload_to="perros")
+
+
+        
+
+
+class Avatar(models.Model):
     imagen = models.ImageField(upload_to="avatares")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 

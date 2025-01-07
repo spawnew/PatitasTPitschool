@@ -57,13 +57,13 @@ class PerroList(LoginRequiredMixin,  ListView):
 
 class PerroCreate(LoginRequiredMixin, CreateView):
     model = Perro
-    fields = ['nombre', 'edad','direccion','contacto']  
+    fields = ['nombre', 'edad','direccion','contacto','imagen']  
     template_name = 'perro_form.html'
     success_url = reverse_lazy('perro_list')
     
 class  PerroUpdate(LoginRequiredMixin, UpdateView):
     model = Perro
-    fields = ['nombre', 'edad', 'direccion','contacto']
+    fields = ['nombre', 'edad', 'direccion','contacto','imagen']
     template_name = 'update_perro.html'
     success_url = reverse_lazy('perro_list')
 
@@ -126,10 +126,29 @@ def agregar_avatar(request):
 
             imagen = Avatar.objects.get(user=request.user.id).imagen.url
             request.session["avatar"] = imagen
-            return render(request, "miapp/home.html")
+            return render(request, "home.html")
 
     else:    
         form = AvatarForm()
 
-    return render(request, "miapp/agregar_avatar.html", {"form": form })
+    return render(request, "agregar_avatar.html", {"form": form })
 
+@login_required
+def editarPerfil(request):
+    usuario = request.user
+
+    if request.method == "POST":
+        form = UserEditForm(request.POST)
+        if form.is_valid():
+            informacion = form.cleaned_data
+            user = User.objects.get(username=usuario)
+            user.email = informacion['email']
+            user.first_name = informacion['first_name']
+            user.last_name = informacion['last_name']
+            user.set_password(informacion['password1'])
+            user.save()
+            return render(request, "miapp/home.html")
+    else:    
+        form = UserEditForm(instance=usuario)
+
+    return render(request, "miapp/editar_Perfil.html", {"form": form }) 
