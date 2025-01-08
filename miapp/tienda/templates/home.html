@@ -34,11 +34,11 @@
                         {% endif %}
         </ul>
     </nav>
-    {%block otrotitulo%}
+
+    <main>
+            {%block otrotitulo%}
 <h1 class="tituloPrincipal">Bienvenidos a Patitas</h1>
     {%endblock otrotitulo%}
-    <main>
-        
    
         
         {% block contenido %}
@@ -47,7 +47,9 @@
                 puede publicar <br>su mascota perdida o encontrada
                 o <br>contactarnos para que nosotros la subamos a la pagina
             </b>
+            
         </p>
+        
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
