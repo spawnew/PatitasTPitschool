@@ -47,7 +47,7 @@ body {
 .nav li a:hover {
     background-color: #5b76ee;
     /* White background */
-    color: #3c0ce9;
+    color: #7d59fc;
     /* Orange text */
     transform: scale(1.1);
     /* Slightly enlarge on hover */
